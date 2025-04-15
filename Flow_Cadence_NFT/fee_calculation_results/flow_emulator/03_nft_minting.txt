@@ -1,0 +1,400 @@
+1. Minting an Example NFT into account01 storage:
+
+Block ID	e5737f230d45374d6fc4e0a7371fb99bfd054321d6facefab2131a11b36168c2
+Block Height	13
+Status		✅ SEALED
+ID		c9815b23fc241efc9cdd63360c263c545c14484fd195f95e571725848e80fab2
+Payer		f8d6e0586b0a20c7
+Authorizers	[f8d6e0586b0a20c7]
+
+Proposal Key:	
+    Address	f8d6e0586b0a20c7
+    Index	0
+    Sequence	7
+
+No Payload Signatures
+
+Envelope Signature 0: f8d6e0586b0a20c7
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.ExampleNFTContract.NFTMinted
+    Tx ID	c9815b23fc241efc9cdd63360c263c545c14484fd195f95e571725848e80fab2
+    Values
+		- tokenId (UInt64): 78065325572096 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Deposited
+    Tx ID	c9815b23fc241efc9cdd63360c263c545c14484fd195f95e571725848e80fab2
+    Values
+		- collectionUUID (UInt64): 166026255794176 
+		- id (UInt64): 78065325572096 
+		- to ((Address)?): 0x179b6b1cb6755e31 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 78065325572096 
+
+    Index	2
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	c9815b23fc241efc9cdd63360c263c545c14484fd195f95e571725848e80fab2
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 999994999.99080000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 78065325572097 
+
+    Index	3
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	c9815b23fc241efc9cdd63360c263c545c14484fd195f95e571725848e80fab2
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	4
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	c9815b23fc241efc9cdd63360c263c545c14484fd195f95e571725848e80fab2
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00025000 
+		- depositedUUID (UInt64): 78065325572097 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	5
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	c9815b23fc241efc9cdd63360c263c545c14484fd195f95e571725848e80fab2
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000026 
+		- inclusionEffort (UFix64): 1.00000000
+
+Emulator-account storage before NFT minting: 
+Emulator-account storage after NFT minting: 437584
+
+Account01 storage before NFT minting: 1592
+Account01 storage after NFT minting: 1755 (+ 163 Bytes)
+
+The assumption, again, is that an ExampleNFTContract.NFT occupies 163 bytes in storage
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Minting an Example NFT into account02 storage:
+
+Block ID	e871844574b268560da2f0d1b2b8f1f6ea097c6b0da3e5d5584c02324fe2f827
+Block Height	14
+Status		✅ SEALED
+ID		52f2520b162259f724fe23460cd2b4411e158b454f569b54d25987a0ac0bd50e
+Payer		f8d6e0586b0a20c7
+Authorizers	[f8d6e0586b0a20c7]
+
+Proposal Key:	
+    Address	f8d6e0586b0a20c7
+    Index	0
+    Sequence	8
+
+No Payload Signatures
+
+Envelope Signature 0: f8d6e0586b0a20c7
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.ExampleNFTContract.NFTMinted
+    Tx ID	52f2520b162259f724fe23460cd2b4411e158b454f569b54d25987a0ac0bd50e
+    Values
+		- tokenId (UInt64): 96757023244288 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Deposited
+    Tx ID	52f2520b162259f724fe23460cd2b4411e158b454f569b54d25987a0ac0bd50e
+    Values
+		- collectionUUID (UInt64): 162727720910848 
+		- id (UInt64): 96757023244288 
+		- to ((Address)?): 0xf3fcd2c1a78f5eee 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 96757023244288 
+
+    Index	2
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	52f2520b162259f724fe23460cd2b4411e158b454f569b54d25987a0ac0bd50e
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 999994999.99078000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 96757023244289 
+
+    Index	3
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	52f2520b162259f724fe23460cd2b4411e158b454f569b54d25987a0ac0bd50e
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	4
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	52f2520b162259f724fe23460cd2b4411e158b454f569b54d25987a0ac0bd50e
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00027000 
+		- depositedUUID (UInt64): 96757023244289 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	5
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	52f2520b162259f724fe23460cd2b4411e158b454f569b54d25987a0ac0bd50e
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000026 
+		- inclusionEffort (UFix64): 1.00000000 
+
+Emulator-account storage before NFT minting: 
+Emulator-account storage after NFT minting: 437724 (+ )
+
+Account02 storage before NFT minting: 1592
+Account02 storage after NFT minting: 1755 (+ 163 Bytes)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Minting an Example NFT into account03 storage:
+
+Block ID	05ee33e401053c5c3d99b1e28eaa8aca3b122562fc201e5ea42c81141d0648b8
+Block Height	15
+Status		✅ SEALED
+ID		b1fd8234caab16bfd485961ee614ae53b833c98a9dbd8a220d7474b2223a450e
+Payer		f8d6e0586b0a20c7
+Authorizers	[f8d6e0586b0a20c7]
+
+Proposal Key:	
+    Address	f8d6e0586b0a20c7
+    Index	0
+    Sequence	9
+
+No Payload Signatures
+
+Envelope Signature 0: f8d6e0586b0a20c7
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.ExampleNFTContract.NFTMinted
+    Tx ID	b1fd8234caab16bfd485961ee614ae53b833c98a9dbd8a220d7474b2223a450e
+    Values
+		- tokenId (UInt64): 2199023255552 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Deposited
+    Tx ID	b1fd8234caab16bfd485961ee614ae53b833c98a9dbd8a220d7474b2223a450e
+    Values
+		- collectionUUID (UInt64): 72567767433216 
+		- id (UInt64): 2199023255552 
+		- to ((Address)?): 0xe03daebed8ca0615 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 2199023255552 
+
+    Index	2
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	b1fd8234caab16bfd485961ee614ae53b833c98a9dbd8a220d7474b2223a450e
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 999994999.99076000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 2199023255553 
+
+    Index	3
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	b1fd8234caab16bfd485961ee614ae53b833c98a9dbd8a220d7474b2223a450e
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	4
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	b1fd8234caab16bfd485961ee614ae53b833c98a9dbd8a220d7474b2223a450e
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00029000 
+		- depositedUUID (UInt64): 2199023255553 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	5
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	b1fd8234caab16bfd485961ee614ae53b833c98a9dbd8a220d7474b2223a450e
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000026 
+		- inclusionEffort (UFix64): 1.00000000 
+
+Emulator-account storage before NFT minting: 437724
+Emulator-account storage after NFT minting: 437868 (+ 144 Bytes)
+
+Account03 storage before NFT minting: 1592
+Account03 storage after NFT minting: 1755 (+ 163 Bytes)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Minting an Example NFT into account04 storage:
+
+Block ID	13faf687d68c11d8d09c75fb9947eb8373987bc8358af57350047c3c2700ef95
+Block Height	16
+Status		✅ SEALED
+ID		375dce15293eca28389d5eae6d5a8ab021e51d9271e4ca2fbe2b9ce950fcf6ed
+Payer		f8d6e0586b0a20c7
+Authorizers	[f8d6e0586b0a20c7]
+
+Proposal Key:	
+    Address	f8d6e0586b0a20c7
+    Index	0
+    Sequence	10
+
+No Payload Signatures
+
+Envelope Signature 0: f8d6e0586b0a20c7
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.ExampleNFTContract.NFTMinted
+    Tx ID	375dce15293eca28389d5eae6d5a8ab021e51d9271e4ca2fbe2b9ce950fcf6ed
+    Values
+		- tokenId (UInt64): 216603790671872 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Deposited
+    Tx ID	375dce15293eca28389d5eae6d5a8ab021e51d9271e4ca2fbe2b9ce950fcf6ed
+    Values
+		- collectionUUID (UInt64): 9895604649984 
+		- id (UInt64): 216603790671872 
+		- to ((Address)?): 0x045a1763c93006ca 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 216603790671872 
+
+    Index	2
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	375dce15293eca28389d5eae6d5a8ab021e51d9271e4ca2fbe2b9ce950fcf6ed
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 999994999.99074000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 216603790671873 
+
+    Index	3
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	375dce15293eca28389d5eae6d5a8ab021e51d9271e4ca2fbe2b9ce950fcf6ed
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	4
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	375dce15293eca28389d5eae6d5a8ab021e51d9271e4ca2fbe2b9ce950fcf6ed
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00031000 
+		- depositedUUID (UInt64): 216603790671873 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	5
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	375dce15293eca28389d5eae6d5a8ab021e51d9271e4ca2fbe2b9ce950fcf6ed
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000026 
+		- inclusionEffort (UFix64): 1.00000000 
+
+Emulator-account storage before NFT minting: 437868
+Emulator-account storage after NFT minting: 438080 (+ 212 Bytes)
+
+Account04 storage before NFT minting: 1592
+Account04 storage after NFT minting: 1755 (+ 163 Bytes)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Minting an Example NFT into account05 storage:
+
+Block ID	16a069d29d426cb40915dfe97784627e0f7924a980b46f4a49df0cc8d5b0bf04
+Block Height	17
+Status		✅ SEALED
+ID		fe38083a37db4807151cdcaf2cb64ea98317fdcd0691ec792b84d2ff74a72e0d
+Payer		f8d6e0586b0a20c7
+Authorizers	[f8d6e0586b0a20c7]
+
+Proposal Key:	
+    Address	f8d6e0586b0a20c7
+    Index	0
+    Sequence	11
+
+No Payload Signatures
+
+Envelope Signature 0: f8d6e0586b0a20c7
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.ExampleNFTContract.NFTMinted
+    Tx ID	fe38083a37db4807151cdcaf2cb64ea98317fdcd0691ec792b84d2ff74a72e0d
+    Values
+		- tokenId (UInt64): 164926744166400 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Deposited
+    Tx ID	fe38083a37db4807151cdcaf2cb64ea98317fdcd0691ec792b84d2ff74a72e0d
+    Values
+		- collectionUUID (UInt64): 112150186033156 
+		- id (UInt64): 164926744166400 
+		- to ((Address)?): 0x120e725050340cab 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 164926744166400 
+
+    Index	2
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	fe38083a37db4807151cdcaf2cb64ea98317fdcd0691ec792b84d2ff74a72e0d
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 999994999.99072000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 164926744166401 
+
+    Index	3
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	fe38083a37db4807151cdcaf2cb64ea98317fdcd0691ec792b84d2ff74a72e0d
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	4
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	fe38083a37db4807151cdcaf2cb64ea98317fdcd0691ec792b84d2ff74a72e0d
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00033000 
+		- depositedUUID (UInt64): 164926744166401 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	5
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	fe38083a37db4807151cdcaf2cb64ea98317fdcd0691ec792b84d2ff74a72e0d
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000026 
+		- inclusionEffort (UFix64): 1.00000000 
+
+Emulator-account storage before NFT minting: 438080
+Emulator-account storage after NFT minting: 438225 (+ 145 Bytes)
+
+Account05 storage before NFT minting: 1592
+Account05 storage after NFT minting: 1755 (+ 163 Bytes)

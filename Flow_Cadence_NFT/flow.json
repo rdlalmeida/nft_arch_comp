@@ -1,0 +1,308 @@
+{
+    "contracts": {
+        "ExampleNFTContract": {
+            "source": "cadence/contracts/ExampleNFTContract.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "f233dcee88fe0abe",
+                "testing": "0000000000000007",
+                "testnet": "9a0766d93b6608b7"
+            }
+        },
+        "NonFungibleToken": {
+            "source": "imports/1d7e57aa55817448/NonFungibleToken.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "1d7e57aa55817448",
+                "testnet": "631e88ae7f1d7c20"
+            }
+        },
+        "FlowToken": {
+            "source": "imports/1654653399040a61/FlowToken.cdc",
+            "aliases": {
+                "emulator": "0ae53cb6e3f42a79",
+                "mainnet": "1654653399040a61",
+                "testnet": "7e60df042a9c0868"
+            }
+        },
+        "FlowFees": {
+            "source": "imports/f919ee77447b7497/FlowFees.cdc",
+            "aliases": {
+                "emulator": "e5a8b7f23e8b548f",
+                "mainnet": "f919ee77447b7497",
+                "testnet": "912d5440f7e3769e"
+            }
+        },
+        "FlowStorageFees": {
+            "source": "imports/e467b9dd11fa00df/FlowStorageFees.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "e467b9dd11fa00df",
+                "testnet": "8c5303eaa26202d6"
+            }
+        }
+    },
+    "dependencies": {
+        "Burner": {
+            "source": "mainnet://f233dcee88fe0abe.Burner",
+            "hash": "71af18e227984cd434a3ad00bb2f3618b76482842bae920ee55662c37c8bf331",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "f233dcee88fe0abe",
+                "testnet": "9a0766d93b6608b7"
+            }
+        },
+        "FlowClusterQC": {
+            "source": "mainnet://8624b52f9ddcd04a.FlowClusterQC",
+            "hash": "c01ac0263dce7395dfd6b53f1ec327e9d8ccb1103711f8c1829cb903db0e2975",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "8624b52f9ddcd04a",
+                "testnet": "9eca2b38b18b5dfe"
+            }
+        },
+        "FlowDKG": {
+            "source": "mainnet://8624b52f9ddcd04a.FlowDKG",
+            "hash": "12dddd9b76d098310a7c6cafbc63af05e3ba3a98beb3d703740a7340192dc6fd",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "8624b52f9ddcd04a",
+                "testnet": "9eca2b38b18b5dfe"
+            }
+        },
+        "FlowEpoch": {
+            "source": "mainnet://8624b52f9ddcd04a.FlowEpoch",
+            "hash": "0e2b347f8714c99ee03ce5b16a310af8af65673b70b687ca7514df7386b936a4",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "8624b52f9ddcd04a",
+                "testnet": "9eca2b38b18b5dfe"
+            }
+        },
+        "FlowFees": {
+            "source": "mainnet://f919ee77447b7497.FlowFees",
+            "hash": "d02bc8295c0434cf2b0a96a77d992f49f52e7865debda84e7a21e176e163a680",
+            "aliases": {
+                "emulator": "e5a8b7f23e8b548f",
+                "mainnet": "f919ee77447b7497",
+                "testnet": "912d5440f7e3769e"
+            }
+        },
+        "FlowIDTableStaking": {
+            "source": "mainnet://8624b52f9ddcd04a.FlowIDTableStaking",
+            "hash": "d0c96b89bd34ca820216ddd340b4748184cd03235e7949fa934db9b8b6100705",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "8624b52f9ddcd04a",
+                "testnet": "9eca2b38b18b5dfe"
+            }
+        },
+        "FlowServiceAccount": {
+            "source": "mainnet://e467b9dd11fa00df.FlowServiceAccount",
+            "hash": "a797fd8923ae6c7063ae1480b4874acf20ee4f40f97e2e874dd617c157bf8310",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "e467b9dd11fa00df",
+                "testnet": "8c5303eaa26202d6"
+            }
+        },
+        "FlowStorageFees": {
+            "source": "mainnet://e467b9dd11fa00df.FlowStorageFees",
+            "hash": "e38d8a95f6518b8ff46ce57dfa37b4b850b3638f33d16333096bc625b6d9b51a",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "e467b9dd11fa00df",
+                "testnet": "8c5303eaa26202d6"
+            }
+        },
+        "FlowToken": {
+            "source": "mainnet://1654653399040a61.FlowToken",
+            "hash": "cefb25fd19d9fc80ce02896267eb6157a6b0df7b1935caa8641421fe34c0e67a",
+            "aliases": {
+                "emulator": "0ae53cb6e3f42a79",
+                "mainnet": "1654653399040a61",
+                "testnet": "7e60df042a9c0868"
+            }
+        },
+        "FungibleToken": {
+            "source": "mainnet://f233dcee88fe0abe.FungibleToken",
+            "hash": "050328d01c6cde307fbe14960632666848d9b7ea4fef03ca8c0bbfb0f2884068",
+            "aliases": {
+                "emulator": "ee82856bf20e2aa6",
+                "mainnet": "f233dcee88fe0abe",
+                "testnet": "9a0766d93b6608b7"
+            }
+        },
+        "FungibleTokenMetadataViews": {
+            "source": "mainnet://f233dcee88fe0abe.FungibleTokenMetadataViews",
+            "hash": "dff704a6e3da83997ed48bcd244aaa3eac0733156759a37c76a58ab08863016a",
+            "aliases": {
+                "emulator": "ee82856bf20e2aa6",
+                "mainnet": "f233dcee88fe0abe",
+                "testnet": "9a0766d93b6608b7"
+            }
+        },
+        "MetadataViews": {
+            "source": "mainnet://1d7e57aa55817448.MetadataViews",
+            "hash": "10a239cc26e825077de6c8b424409ae173e78e8391df62750b6ba19ffd048f51",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "1d7e57aa55817448",
+                "testnet": "631e88ae7f1d7c20"
+            }
+        },
+        "NonFungibleToken": {
+            "source": "mainnet://1d7e57aa55817448.NonFungibleToken",
+            "hash": "b63f10e00d1a814492822652dac7c0574428a200e4c26cb3c832c4829e2778f0",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "1d7e57aa55817448",
+                "testnet": "631e88ae7f1d7c20"
+            }
+        },
+        "ViewResolver": {
+            "source": "mainnet://1d7e57aa55817448.ViewResolver",
+            "hash": "374a1994046bac9f6228b4843cb32393ef40554df9bd9907a702d098a2987bde",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "mainnet": "1d7e57aa55817448",
+                "testnet": "631e88ae7f1d7c20"
+            }
+        }
+    },
+    "networks": {
+        "emulator": "127.0.0.1:3569",
+        "mainnet": "access.mainnet.nodes.onflow.org:9000",
+        "testing": "127.0.0.1:3569",
+        "testnet": "access.devnet.nodes.onflow.org:9000"
+    },
+    "accounts": {
+        "account01": {
+            "address": "0x179b6b1cb6755e31",
+            "key": {
+                "type": "file",
+                "location": "account01.pkey"
+            }
+        },
+        "account02": {
+            "address": "0xf3fcd2c1a78f5eee",
+            "key": {
+                "type": "file",
+                "location": "account02.pkey"
+            }
+        },
+        "account03": {
+            "address": "0xe03daebed8ca0615",
+            "key": {
+                "type": "file",
+                "location": "account03.pkey"
+            }
+        },
+        "account04": {
+            "address": "0x045a1763c93006ca",
+            "key": {
+                "type": "file",
+                "location": "account04.pkey"
+            }
+        },
+        "account05": {
+            "address": "0x120e725050340cab",
+            "key": {
+                "type": "file",
+                "location": "account05.pkey"
+            }
+        },
+        "emulator-account": {
+            "address": "f8d6e0586b0a20c7",
+            "key": {
+                "type": "file",
+                "location": "emulator-account.pkey"
+            }
+        },
+        "flow-account00": {
+            "address": "0x678bb63d2ecf5ac2",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account00.key"
+            }
+        },
+        "flow-account01": {
+            "address": "0x83ec0fe03f355a1d",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account01.key"
+            }
+        },
+        "flow-account02": {
+            "address": "0x95b86ad3a631507cd",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account02.key"
+            }
+        },
+        "flow-account03": {
+            "address": "0x71dfd30eb7cb50a3",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account03.key"
+            }
+        },
+        "flow-account04": {
+            "address": "0x9e92584a6ab42e55",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account04.key"
+            }
+        },
+        "flow-account05": {
+            "address": "0x7af5e1977b4e2e8a",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account05.key"
+            }
+        },
+        "flow-account06": {
+            "address": "0x88c63d79f3b02434",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account06.key"
+            }
+        },
+        "flow-account07": {
+            "address": "0x65413a9b5deb9e6e",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account07.key"
+            }
+        },
+        "flow-account08": {
+            "address": "0x812683464c119eb1",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account08.key"
+            }
+        },
+        "flow-account09": {
+            "address": "0x9772e675d51594d0",
+            "key": {
+                "type": "file",
+                "location": "flow_test_accounts/flow_account09.key"
+            }
+        }
+    },
+    "deployments": {
+        "emulator": {
+            "emulator-account": [
+                {
+                    "name": "ExampleNFTContract",
+                    "args": [
+                        {
+                            "type": "String",
+                            "value": "Ricardo"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

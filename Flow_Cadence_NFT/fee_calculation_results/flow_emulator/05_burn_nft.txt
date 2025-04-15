@@ -1,0 +1,253 @@
+1. Destroying NFT with ID 78065325572096 from account01 (0x179b6b1cb6755e31)
+
+Block ID	13550a69a2bce8fb0f839374e21edff82d9c32c8a4d3a03db082f04b3d9f686a
+Block Height	24
+Status		✅ SEALED
+ID		6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+Payer		179b6b1cb6755e31
+Authorizers	[179b6b1cb6755e31]
+
+Proposal Key:	
+    Address	179b6b1cb6755e31
+    Index	0
+    Sequence	3
+
+No Payload Signatures
+
+Envelope Signature 0: 179b6b1cb6755e31
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Withdrawn
+    Tx ID	6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+    Values
+		- from ((Address)?): 0x179b6b1cb6755e31 
+		- id (UInt64): 78065325572096 
+		- providerUUID (UInt64): 166026255794176 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 78065325572096 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.NFT.ResourceDestroyed
+    Tx ID	6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+    Values
+		- id (UInt64): 78065325572096 
+		- uuid (UInt64): 78065325572096 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0x179b6b1cb6755e31 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00096000 
+		- from ((Address)?): 0x179b6b1cb6755e31 
+		- fromUUID (UInt64): 38482906972162 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 46179488366592 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00047000 
+		- depositedUUID (UInt64): 46179488366592 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	6bddb8100de13298390f034beca33447ed5d1259265843281f00f8354e5da049
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000012 
+		- inclusionEffort (UFix64): 1.00000000 
+
+Account01 storage used before burn: 1755
+Account01 storage used after burn: 1592 (-163)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Destroying NFT with ID 96757023244288 from account02 (0xf3fcd2c1a78f5eee)
+
+Block ID	fa4e819305e31e8746d38f4de30cdb6b9dba7820aa3e6f010bab600e2d5c989e
+Block Height	25
+Status		✅ SEALED
+ID		05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+Payer		f3fcd2c1a78f5eee
+Authorizers	[f3fcd2c1a78f5eee]
+
+Proposal Key:	
+    Address	f3fcd2c1a78f5eee
+    Index	0
+    Sequence	4
+
+No Payload Signatures
+
+Envelope Signature 0: f3fcd2c1a78f5eee
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Withdrawn
+    Tx ID	05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+    Values
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+		- id (UInt64): 96757023244288 
+		- providerUUID (UInt64): 162727720910848 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 96757023244288 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.NFT.ResourceDestroyed
+    Tx ID	05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+    Values
+		- id (UInt64): 96757023244288 
+		- uuid (UInt64): 96757023244288 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00095000 
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+		- fromUUID (UInt64): 149533581377538 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 107752139522048 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00049000 
+		- depositedUUID (UInt64): 107752139522048 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	05371eff6dbf649d684305e68d055cb0e0f056cdae14a46cc8dca318ef3235b5
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000012 
+		- inclusionEffort (UFix64): 1.00000000
+
+Account02 storage used before burn: 1755
+Account02 storage used after burn: 1592 (-163)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Destroying NFT with ID 2199023255552 from account03 (0xe03daebed8ca0615)
+
+Block ID	0ba930b5095a0468344d46751d23f8a97657ae4cc5d8d8da93f847de918951a0
+Block Height	26
+Status		✅ SEALED
+ID		dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+Payer		e03daebed8ca0615
+Authorizers	[e03daebed8ca0615]
+
+Proposal Key:	
+    Address	e03daebed8ca0615
+    Index	0
+    Sequence	2
+
+No Payload Signatures
+
+Envelope Signature 0: e03daebed8ca0615
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Withdrawn
+    Tx ID	dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+    Values
+		- from ((Address)?): 0xe03daebed8ca0615 
+		- id (UInt64): 2199023255552 
+		- providerUUID (UInt64): 72567767433216 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 2199023255552 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.NFT.ResourceDestroyed
+    Tx ID	dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+    Values
+		- id (UInt64): 2199023255552 
+		- uuid (UInt64): 2199023255552 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0xe03daebed8ca0615 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00097000 
+		- from ((Address)?): 0xe03daebed8ca0615 
+		- fromUUID (UInt64): 112150186033154 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 69269232549888 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00051000 
+		- depositedUUID (UInt64): 69269232549888 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	dcf089ed00f5986c03a770fe9f96642d7f2fa41b5094e577ee183eb97493dcfd
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000012 
+		- inclusionEffort (UFix64): 1.00000000 
+
+Account03 storage used before burn: 1755
+Account03 storage used after burn: 1592 (-163)

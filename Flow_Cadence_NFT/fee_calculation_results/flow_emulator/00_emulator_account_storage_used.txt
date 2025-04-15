@@ -1,0 +1,490 @@
+1. After resetting the emulator and running
+    flow scripts execute cadence/scripts/05_get_used_storage.cdc 0xf8d6e0586b0a20c7 --network emulator >> fee_calculation_results/00_emulator_account_storage_used.txt
+
+Storage space used by the service account (0xf8d6e0586b0a20c7) after a full reset (before any other deploys or additional accounts creation)
+NOTE: The service account was created with a bunch of pre-deployed standard contracts listed bellow (the ones deployed in the 0xf8d6e0586b0a20c7 account), hence why the storage value is so high.
+
+7:56PM INF 📜 Flow contract                              Burner=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              EVM=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              FlowClusterQC=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              FlowDKG=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              FlowEpoch=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              FlowFees=0xe5a8b7f23e8b548f
+7:56PM INF 📜 Flow contract                              FlowIDTableStaking=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              FlowServiceAccount=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              FlowStorageFees=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              FlowToken=0x0ae53cb6e3f42a79
+7:56PM INF 📜 Flow contract                              FungibleToken=0xee82856bf20e2aa6
+7:56PM INF 📜 Flow contract                              FungibleTokenMetadataViews=0xee82856bf20e2aa6
+7:56PM INF 📜 Flow contract                              FungibleTokenSwitchboard=0xee82856bf20e2aa6
+7:56PM INF 📜 Flow contract                              MetadataViews=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              NodeVersionBeacon=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              NonFungibleToken=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              RandomBeaconHistory=0xf8d6e0586b0a20c7
+7:56PM INF 📜 Flow contract                              ViewResolver=0xf8d6e0586b0a20c7
+
+
+Result: 428655 Bytes
+
+2. After creating 5 accounts, the service account storage is now:
+
+Result: 429747 Bytes
+
+So, adding 5 emulator test accounts takes (429747 - 428655 = 1092) 1.092 KBytes, apparently
+
+3. The storage used by each of the new test emulator accounts is (in Bytes):
+account01(0x179b6b1cb6755e31) = 1007
+account02(0xf3fcd2c1a78f5eee) = 1007 
+account03(0xe03daebed8ca0615) = 1007
+account04(0x045a1763c93006ca) = 1007
+account05(0x120e725050340cab) = 1007
+
+4. Flow fees deducted with each account creation (by recovering and exploring the FlowFees.FeesDeducted events):
+
+------------------------------------------------------------------------------------
+account01(0x179b6b1cb6755e31):
+Events Block #1:
+    Index	17
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	dfd31af401e0ccfa6e892efaff6fe39dd22e19fa5080e207bc8f2c15a356d41a
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000021 
+		- inclusionEffort (UFix64): 1.00000000 
+
+------------------------------------------------------------------------------------
+account02(0xf3fcd2c1a78f5eee)
+Events Block #2:
+    Index	17
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000019 
+		- inclusionEffort (UFix64): 1.00000000 
+
+------------------------------------------------------------------------------------
+account03(0xe03daebed8ca0615)
+Events Block #3:
+    Index	17
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	b60b4548869380b3d1992a7dfbc15d19b707fe39d0b70ea96809e9b63422d409
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000019 
+		- inclusionEffort (UFix64): 1.00000000 
+
+------------------------------------------------------------------------------------
+account04(0x045a1763c93006ca)
+Events Block #4:
+    Index	17
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	b69ceedb26d1bd50814031109dd67046b73da1b2ea9f6765336926a334108880
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000019 
+		- inclusionEffort (UFix64): 1.00000000 
+
+------------------------------------------------------------------------------------
+account05(0x120e725050340cab)
+Events Block #5:
+    Index	17
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	5af530367d52832e24c4482209f32c1ff10b90faf569f870498d9b9f85b8a4a9
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000019 
+		- inclusionEffort (UFix64): 1.00000000
+
+
+5. The full process of creating a new account in Flow is described bellow as a sequence of Events emitted during the process. Essentially it consists in withdrawing the fees required to pay the process + 0.001 FLOW from the service-account to deposit into the newly created account so that it starts already with the minimal FLOW balance in it. The next sequence of Events were emitted by the emulator when creating account02(0xf3fcd2c1a78f5eee):
+
+Block ID	0ebc930e248100664f964cd8c6e8d4fc2491579df2e9cfb46ccdf68573c5c58f
+Block Height	2
+Status		✅ SEALED
+ID		b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+Payer		f8d6e0586b0a20c7
+Authorizers	[f8d6e0586b0a20c7]
+
+Proposal Key:	
+    Address	f8d6e0586b0a20c7
+    Index	0
+    Sequence	1
+
+No Payload Signatures
+
+Envelope Signature 0: f8d6e0586b0a20c7
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00100000 
+		- balanceAfter (UFix64): 999999999.99398000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 149533581377536 
+
+    Index	1
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00100000 
+		- from ((Address)?): nil 
+
+    Index	2
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00100000 
+		- balanceAfter (UFix64): 0.00000000 
+		- from ((Address)?): nil 
+		- fromUUID (UInt64): 149533581377536 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 149533581377537 
+
+    Index	3
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00000000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	4
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00000000 
+		- balanceAfter (UFix64): 0.00002000 
+		- depositedUUID (UInt64): 149533581377536 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	5
+    Type	A.e5a8b7f23e8b548f.FlowFees.TokensDeposited
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00000000 
+
+    Index	6
+    Type	flow.StorageCapabilityControllerIssued
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+		- id (UInt64): 1 
+		- path (StoragePath): /storage/flowTokenVault 
+		- type (Type): Type<&A.0ae53cb6e3f42a79.FlowToken.Vault>() 
+
+    Index	7
+    Type	flow.CapabilityPublished
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+		- capability (Capability): Capability<&A.0ae53cb6e3f42a79.FlowToken.Vault>(address: 0xf3fcd2c1a78f5eee, id: 1) 
+		- path (PublicPath): /public/flowTokenReceiver 
+
+    Index	8
+    Type	flow.StorageCapabilityControllerIssued
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+		- id (UInt64): 2 
+		- path (StoragePath): /storage/flowTokenVault 
+		- type (Type): Type<&A.0ae53cb6e3f42a79.FlowToken.Vault>() 
+
+    Index	9
+    Type	flow.CapabilityPublished
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+		- capability (Capability): Capability<&A.0ae53cb6e3f42a79.FlowToken.Vault>(address: 0xf3fcd2c1a78f5eee, id: 2) 
+		- path (PublicPath): /public/flowTokenBalance 
+
+    Index	10
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00100000 
+		- to ((Address)?): 0xf3fcd2c1a78f5eee 
+
+    Index	11
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00100000 
+		- balanceAfter (UFix64): 0.00100000 
+		- depositedUUID (UInt64): 149533581377537 
+		- to ((Address)?): 0xf3fcd2c1a78f5eee 
+		- toUUID (UInt64): 149533581377538 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	12
+    Type	flow.AccountCreated
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+
+    Index	13
+    Type	flow.AccountKeyAdded
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+		- hashAlgorithm (HashAlgorithm): HashAlgorithm(rawValue: 3) 
+		- keyIndex (Int): 0 
+		- publicKey (PublicKey): PublicKey(publicKey: [144, 19, 227, 192, 206, 246, 149, 170, 12, 229, 27, 59, 55, 205, 86, 240, 163, 75, 130, 30, 161, 193, 177, 189, 19, 14, 194, 143, 84, 213, 232, 39, 40, 99, 196, 78, 20, 224, 193, 170, 93, 244, 88, 124, 247, 180, 191, 100, 16, 60, 37, 28, 36, 167, 105, 66, 176, 160, 28, 188, 185, 57, 172, 98], signatureAlgorithm: SignatureAlgorithm(rawValue: 1)) 
+		- weight (UFix64): 1000.00000000 
+
+    Index	14
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 999999999.99397000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 149533581377539 
+
+    Index	15
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	16
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00003000 
+		- depositedUUID (UInt64): 149533581377539 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	17
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	b3bcf1ef8a6cca30a3142752dee2500c089590a363351dbfe42bd35e2473b58f
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000019 
+		- inclusionEffort (UFix64): 1.00000000 
+
+
+6. For consistency reasons, each test account needs to be funded from the service account, since these are created with the minimum FLOW balance, i.e., 0.001 FLOW. As such, after creating a test account, I also need to transfer some funds from the service account (which is created with a ridiculous amount of test FLOW in it) to the new accounts. Just for comparison, I'm checking the storage used by the service account before and after funding all 5 test accounts with 1000.0 FLOW
+
+emulator-account storage used before account funding: 
+429747 Bytes (same as the last time I've checked)
+
+FlowFees.FeesDeducted events (and others) emitted from the account funding:
+
+Transaction ID: 06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+
+Block ID	c4b601403c28f36dc81096c45e1e15dd767a185983fe17b53b85d38d18b251e2
+Block Height	6
+Status		✅ SEALED
+ID		06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+Payer		f8d6e0586b0a20c7
+Authorizers	[f8d6e0586b0a20c7]
+
+Proposal Key:	
+    Address	f8d6e0586b0a20c7
+    Index	0
+    Sequence	5
+
+No Payload Signatures
+
+Envelope Signature 0: f8d6e0586b0a20c7
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 999998999.99090000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 264982302294016 
+
+    Index	1
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- to ((Address)?): 0x179b6b1cb6755e31 
+
+    Index	2
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 1000.00100000 
+		- depositedUUID (UInt64): 264982302294016 
+		- to ((Address)?): 0x179b6b1cb6755e31 
+		- toUUID (UInt64): 38482906972162 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 999997999.99090000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 264982302294017 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- to ((Address)?): 0xf3fcd2c1a78f5eee 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 1000.00100000 
+		- depositedUUID (UInt64): 264982302294017 
+		- to ((Address)?): 0xf3fcd2c1a78f5eee 
+		- toUUID (UInt64): 149533581377538 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 999996999.99090000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 264982302294018 
+
+    Index	7
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- to ((Address)?): 0xe03daebed8ca0615 
+
+    Index	8
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 1000.00100000 
+		- depositedUUID (UInt64): 264982302294018 
+		- to ((Address)?): 0xe03daebed8ca0615 
+		- toUUID (UInt64): 112150186033154 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	9
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 999995999.99090000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 264982302294019 
+
+    Index	10
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- to ((Address)?): 0x045a1763c93006ca 
+
+    Index	11
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 1000.00100000 
+		- depositedUUID (UInt64): 264982302294019 
+		- to ((Address)?): 0x045a1763c93006ca 
+		- toUUID (UInt64): 93458488360962 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	12
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 999994999.99090000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 264982302294020 
+
+    Index	13
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- to ((Address)?): 0x120e725050340cab 
+
+    Index	14
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 1000.00000000 
+		- balanceAfter (UFix64): 1000.00100000 
+		- depositedUUID (UInt64): 264982302294020 
+		- to ((Address)?): 0x120e725050340cab 
+		- toUUID (UInt64): 139637976727554 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	15
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 999994999.99089000 
+		- from ((Address)?): 0xf8d6e0586b0a20c7 
+		- fromUUID (UInt64): 0 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 264982302294021 
+
+    Index	16
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	17
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00011000 
+		- depositedUUID (UInt64): 264982302294021 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	18
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	06a20ea41f5cfc9eac8d79b39f27693046294df3274e5938a5254a3c5631f3f8
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000042 
+		- inclusionEffort (UFix64): 1.00000000
+
+emulator-account storage used after account funding: 
+Result: 429891 (+ 144 Bytes)
+Where does this increase comes from? Changing balances? Creating and destroying temporary FlowVaults for the transfers? Who knows... There's no official explanation for it

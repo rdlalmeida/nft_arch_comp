@@ -1,0 +1,427 @@
+1. Create a NonFungibleToken.Collection for account01:
+
+Block ID	ca9fae0551d3ef34d97ec769c2e750d93dc4f1a051ac88cb8db910ac41cc0928
+Block Height	8
+Status		✅ SEALED
+ID		cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+Payer		179b6b1cb6755e31
+Authorizers	[179b6b1cb6755e31]
+
+Proposal Key:	
+    Address	179b6b1cb6755e31
+    Index	0
+    Sequence	0
+
+No Payload Signatures
+
+Envelope Signature 0: 179b6b1cb6755e31
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	flow.StorageCapabilityControllerIssued
+    Tx ID	cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+    Values
+		- address (Address): 0x179b6b1cb6755e31 
+		- id (UInt64): 3 
+		- path (StoragePath): /storage/exampleNFTCollection 
+		- type (Type): Type<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>() 
+
+    Index	1
+    Type	flow.CapabilityPublished
+    Tx ID	cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+    Values
+		- address (Address): 0x179b6b1cb6755e31 
+		- capability (Capability): Capability<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>(address: 0x179b6b1cb6755e31, id: 3) 
+		- path (PublicPath): /public/exampleNFTCollection 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0x179b6b1cb6755e31 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00099000 
+		- from ((Address)?): 0x179b6b1cb6755e31 
+		- fromUUID (UInt64): 38482906972162 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 166026255794177 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00015000 
+		- depositedUUID (UInt64): 166026255794177 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	cde03a451e69825e9cf6f885c9142508d4a3a18782de8e42efb5336d7e21ed4c
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000015 
+		- inclusionEffort (UFix64): 1.00000000
+
+account01 storage used before collection creation: 1007 Bytes
+account01 storage used after collection creation: 1592 Bytes (+ 585 Bytes)
+The assumption is that the ExampleNFTContract.Collection, which is implemented following the standard defined by NonFungibleToken.Collection, created a resource that occupies 585 Bytes of storage.
+
+The remaining accounts yielded the following outputs:
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Create a NonFungibleToken.Collection for account02:
+
+Block ID	0a0371171882724ba96c28ecd9d05da05f2cab8a9cde06e29b840b943e1d1566
+Block Height	9
+Status		✅ SEALED
+ID		426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+Payer		f3fcd2c1a78f5eee
+Authorizers	[f3fcd2c1a78f5eee]
+
+Proposal Key:	
+    Address	f3fcd2c1a78f5eee
+    Index	0
+    Sequence	0
+
+No Payload Signatures
+
+Envelope Signature 0: f3fcd2c1a78f5eee
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	flow.StorageCapabilityControllerIssued
+    Tx ID	426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+		- id (UInt64): 3 
+		- path (StoragePath): /storage/exampleNFTCollection 
+		- type (Type): Type<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>() 
+
+    Index	1
+    Type	flow.CapabilityPublished
+    Tx ID	426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+    Values
+		- address (Address): 0xf3fcd2c1a78f5eee 
+		- capability (Capability): Capability<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>(address: 0xf3fcd2c1a78f5eee, id: 3) 
+		- path (PublicPath): /public/exampleNFTCollection 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00099000 
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+		- fromUUID (UInt64): 149533581377538 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 162727720910849 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00017000 
+		- depositedUUID (UInt64): 162727720910849 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	426e8ba33dd109101ac6c86d158d04f3b119867f9bbea8ac9fca4c855410156d
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000015 
+		- inclusionEffort (UFix64): 1.00000000
+
+
+account02 storage used before collection creation: 1007 Bytes
+account02 storage used after collection creation: 1592 Bytes (+ 585 Bytes)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Create a NonFungibleToken.Collection for account03:
+
+Block ID	8a27c0a45592038938e190f48568ddf795d7362b98fdaf358b911daec3b8952f
+Block Height	10
+Status		✅ SEALED
+ID		de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+Payer		e03daebed8ca0615
+Authorizers	[e03daebed8ca0615]
+
+Proposal Key:	
+    Address	e03daebed8ca0615
+    Index	0
+    Sequence	0
+
+No Payload Signatures
+
+Envelope Signature 0: e03daebed8ca0615
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	flow.StorageCapabilityControllerIssued
+    Tx ID	de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+    Values
+		- address (Address): 0xe03daebed8ca0615 
+		- id (UInt64): 3 
+		- path (StoragePath): /storage/exampleNFTCollection 
+		- type (Type): Type<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>() 
+
+    Index	1
+    Type	flow.CapabilityPublished
+    Tx ID	de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+    Values
+		- address (Address): 0xe03daebed8ca0615 
+		- capability (Capability): Capability<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>(address: 0xe03daebed8ca0615, id: 3) 
+		- path (PublicPath): /public/exampleNFTCollection 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0xe03daebed8ca0615 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00099000 
+		- from ((Address)?): 0xe03daebed8ca0615 
+		- fromUUID (UInt64): 112150186033154 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 72567767433217 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00019000 
+		- depositedUUID (UInt64): 72567767433217 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	de831d95445d567aeb7f2d05cdd92a9c69e1084a29df42ba768d9f116421d27a
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000015 
+		- inclusionEffort (UFix64): 1.00000000
+
+account03 storage used before collection creation: 1007 Bytes
+account03 storage used after collection creation: 1592 Bytes (+ 585 Bytes)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Create a NonFungibleToken.Collection for account04:
+
+Block ID	09b9a7e4cfdb4999132bf10058e89ca31059558ddb59f34d0879774cfde6ea71
+Block Height	11
+Status		✅ SEALED
+ID		e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+Payer		045a1763c93006ca
+Authorizers	[045a1763c93006ca]
+
+Proposal Key:	
+    Address	045a1763c93006ca
+    Index	0
+    Sequence	0
+
+No Payload Signatures
+
+Envelope Signature 0: 045a1763c93006ca
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	flow.StorageCapabilityControllerIssued
+    Tx ID	e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+    Values
+		- address (Address): 0x045a1763c93006ca 
+		- id (UInt64): 3 
+		- path (StoragePath): /storage/exampleNFTCollection 
+		- type (Type): Type<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>() 
+
+    Index	1
+    Type	flow.CapabilityPublished
+    Tx ID	e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+    Values
+		- address (Address): 0x045a1763c93006ca 
+		- capability (Capability): Capability<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>(address: 0x045a1763c93006ca, id: 3) 
+		- path (PublicPath): /public/exampleNFTCollection 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0x045a1763c93006ca 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00099000 
+		- from ((Address)?): 0x045a1763c93006ca 
+		- fromUUID (UInt64): 93458488360962 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 9895604649985 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00021000 
+		- depositedUUID (UInt64): 9895604649985 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	e4cbe98721f7473f896bf34fb52ff44520ac53eadf60fd15b145a18d8ef80244
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000015 
+		- inclusionEffort (UFix64): 1.00000000
+
+account04 storage used before collection creation: 1007 Bytes
+account04 storage used after collection creation: 1592 Bytes (+ 585 Bytes)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Create a NonFungibleToken.Collection for account05:
+
+Block ID	9cc3f031a7954b877dd1813bb36464e09b9842356fbc276b886f07c3a5bacc4b
+Block Height	12
+Status		✅ SEALED
+ID		c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+Payer		120e725050340cab
+Authorizers	[120e725050340cab]
+
+Proposal Key:	
+    Address	120e725050340cab
+    Index	0
+    Sequence	0
+
+No Payload Signatures
+
+Envelope Signature 0: 120e725050340cab
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	flow.StorageCapabilityControllerIssued
+    Tx ID	c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+    Values
+		- address (Address): 0x120e725050340cab 
+		- id (UInt64): 3 
+		- path (StoragePath): /storage/exampleNFTCollection 
+		- type (Type): Type<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>() 
+
+    Index	1
+    Type	flow.CapabilityPublished
+    Tx ID	c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+    Values
+		- address (Address): 0x120e725050340cab 
+		- capability (Capability): Capability<&{A.f8d6e0586b0a20c7.NonFungibleToken.Collection}>(address: 0x120e725050340cab, id: 3) 
+		- path (PublicPath): /public/exampleNFTCollection 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0x120e725050340cab 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00099000 
+		- from ((Address)?): 0x120e725050340cab 
+		- fromUUID (UInt64): 139637976727554 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 112150186033157 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00023000 
+		- depositedUUID (UInt64): 112150186033157 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	c40c7ce4fc23d0e8f7efd40877b81aee95fc05e61221db6ce2d3e14470be6ca2
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000015 
+		- inclusionEffort (UFix64): 1.00000000
+
+account05 storage used before collection creation: 1007 Bytes
+account05 storage used after collection creation: 1592 Bytes (+ 585 Bytes)

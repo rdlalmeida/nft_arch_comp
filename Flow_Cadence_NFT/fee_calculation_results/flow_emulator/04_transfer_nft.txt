@@ -1,0 +1,193 @@
+1. Transferring ExampleNFT with ID 78065325572096 from account01 (0x179b6b1cb6755e31) to account02 (0xf3fcd2c1a78f5eee)
+
+Block ID	0a646f569385c89259bbcc9657518440a6cfd7cc9c3de179f5d40cbdebea5c23
+Block Height	18
+Status		✅ SEALED
+ID		f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+Payer		179b6b1cb6755e31
+Authorizers	[179b6b1cb6755e31]
+
+Proposal Key:	
+    Address	179b6b1cb6755e31
+    Index	0
+    Sequence	1
+
+No Payload Signatures
+
+Envelope Signature 0: 179b6b1cb6755e31
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Withdrawn
+    Tx ID	f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+    Values
+		- from ((Address)?): 0x179b6b1cb6755e31 
+		- id (UInt64): 78065325572096 
+		- providerUUID (UInt64): 166026255794176 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 78065325572096 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Deposited
+    Tx ID	f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+    Values
+		- collectionUUID (UInt64): 162727720910848 
+		- id (UInt64): 78065325572096 
+		- to ((Address)?): 0xf3fcd2c1a78f5eee 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 78065325572096 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0x179b6b1cb6755e31 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00098000 
+		- from ((Address)?): 0x179b6b1cb6755e31 
+		- fromUUID (UInt64): 38482906972162 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 225399883694080 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00035000 
+		- depositedUUID (UInt64): 225399883694080 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	f688335a9a97b1e699e08d3a8d54d610ae66fd68a4844646b8141016e5dbb49e
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000020 
+		- inclusionEffort (UFix64): 1.00000000
+
+Account01 storage used before transfer: 1755
+Account01 storage used after transfer: 1592 (-163)
+
+Account02 storage used before transfer: 1755
+Account02 storage used after transfer: 1812 (+52)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Transferring ExampleNFT with ID 78065325572096 from account02 (0xf3fcd2c1a78f5eee) to account01 (0x179b6b1cb6755e31), i.e., reversing the previous ones
+
+Block ID	b8782c41e70d2b96d1c0204550edb50d1434c191a14145982eab09be4678f486
+Block Height	19
+Status		✅ SEALED
+ID		9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+Payer		f3fcd2c1a78f5eee
+Authorizers	[f3fcd2c1a78f5eee]
+
+Proposal Key:	
+    Address	f3fcd2c1a78f5eee
+    Index	0
+    Sequence	1
+
+No Payload Signatures
+
+Envelope Signature 0: f3fcd2c1a78f5eee
+Signatures (minimized, use --include signatures)
+
+Events:		 
+    Index	0
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Withdrawn
+    Tx ID	9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+    Values
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+		- id (UInt64): 78065325572096 
+		- providerUUID (UInt64): 162727720910848 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 78065325572096 
+
+    Index	1
+    Type	A.f8d6e0586b0a20c7.NonFungibleToken.Deposited
+    Tx ID	9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+    Values
+		- collectionUUID (UInt64): 166026255794176 
+		- id (UInt64): 78065325572096 
+		- to ((Address)?): 0x179b6b1cb6755e31 
+		- type (String): "A.f8d6e0586b0a20c7.ExampleNFTContract.ExampleNFT" 
+		- uuid (UInt64): 78065325572096 
+
+    Index	2
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensWithdrawn
+    Tx ID	9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+    Values
+		- amount (UFix64): 0.00001000 
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+
+    Index	3
+    Type	A.ee82856bf20e2aa6.FungibleToken.Withdrawn
+    Tx ID	9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 1000.00098000 
+		- from ((Address)?): 0xf3fcd2c1a78f5eee 
+		- fromUUID (UInt64): 149533581377538 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+		- withdrawnUUID (UInt64): 177021372071936 
+
+    Index	4
+    Type	A.0ae53cb6e3f42a79.FlowToken.TokensDeposited
+    Tx ID	9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+    Values
+		- amount (UFix64): 0.00001000 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+
+    Index	5
+    Type	A.ee82856bf20e2aa6.FungibleToken.Deposited
+    Tx ID	9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+    Values
+		- amount (UFix64): 0.00001000 
+		- balanceAfter (UFix64): 0.00037000 
+		- depositedUUID (UInt64): 177021372071936 
+		- to ((Address)?): 0xe5a8b7f23e8b548f 
+		- toUUID (UInt64): 3 
+		- type (String): "A.0ae53cb6e3f42a79.FlowToken.Vault" 
+
+    Index	6
+    Type	A.e5a8b7f23e8b548f.FlowFees.FeesDeducted
+    Tx ID	9564d76f30c13825b878de27ab9313dcbe25c256a6ed224d55e068b12d750142
+    Values
+		- amount (UFix64): 0.00001000 
+		- executionEffort (UFix64): 0.00000021 
+		- inclusionEffort (UFix64): 1.00000000
+
+Account02 storage used before transfer: 1812
+Account02 storage used after transfer: 1755 (-52)
+
+Account01 storage used before transfer: 1592
+Account01 storage used after transfer: 1755 (+163)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Transferring NFTs from account01 and account03 to account02
+
+Account01 storage used before: 1755
+Account02 storage used before: 1755
+Account03 storage used before: 1755
+
+Account01 storage used after: 1592 (-163)
+Account02 storage used after: 1592 (-163)
+Account03 storage used after: 1869 (+144)
+
+All NFTs were returned to their original accounts after this, so the storage levels were recovered (all back to 1755 Bytes)

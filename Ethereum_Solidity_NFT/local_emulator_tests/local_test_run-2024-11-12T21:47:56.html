@@ -1,0 +1,21 @@
+yarn run v1.22.22
+$ /home/ricardoalmeida/github_projects/solidity_projects/22_voteBooth/node_modules/.bin/hardhat test test/03_exampleNFT_gas_test.js --network local
+ExampleNFT_test_execution: 0.803ms
+
+Deploying ' ExampleNFT '...
+/home/ricardoalmeida/github_projects/solidity_projects/contract_addresses.json  =>  {"local":{"ExampleNFT":"0x9A676e781A523b5d0C0e43731313A708CB607508"},"ganache":{},"sepolia":{"ExampleNFT":"0x4E576aB1458eF221849A395DC0BFBDDe592bDd37"},"hardhat":{"VoteBooth":"0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"}}
+Setup: 203.657ms
+  Mint and transfer an Example NFT
+Mint: 38.699ms
+    ✔ Should mint an ExampleNFT into signer01 account (2542408 gas)
+Transfer: 21.067ms
+    ✔ Should transfer ExampleNFT token from signer01 to signer02 (180260 gas)
+
+  Burn the ExampleNFT
+Burn: 16.905ms
+    ✔ Should burn the Example NFT if the contract is connected to signer02 (87993 gas)
+
+
+  3 passing (609ms)
+
+Done in 3.23s.

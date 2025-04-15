@@ -1,0 +1,104 @@
+yarn run v1.22.22
+$ /home/ricardoalmeida/github_projects/solidity_projects/22_voteBooth/node_modules/.bin/hardhat test test/04_exampleNFT_storage_analysis.js
+
+  When accessing ExampleNFT storage
+Deploying ' ExampleNFT '...
+/home/ricardoalmeida/github_projects/solidity_projects/contract_addresses.json  =>  {"local":{},"ganache":{},"sepolia":{},"hardhat":{"VoteBooth":"0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512","ExampleNFT":"0x5FbDB2315678afecb367f032d93F642f64180aa3"}}
+    ✔ should deploy the ExampleNFT contract
+local variables: 
+totalSupply:  0x30
+nextTokenId:  0x30
+name:  0x4578616d706c654e4654
+symbol:  0x454e4654
+owner:  0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Storage: 
+[
+  {
+    slot: 0,
+    data: '0x4578616d706c654e465400000000000000000000000000000000000000000014'
+  },
+  {
+    slot: 1,
+    data: '0x454e465400000000000000000000000000000000000000000000000000000008'
+  },
+  {
+    slot: 2,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 3,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 4,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 5,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 6,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 7,
+    data: '0x000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb92266'
+  },
+  {
+    slot: 8,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 9,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 10,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 11,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 12,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  },
+  {
+    slot: 13,
+    data: '0x0000000000000000000000000000000000000000000000000000000000000000'
+  }
+]
+    ✔ should have various storage in different slots
+
+·------------------------|----------------------------|-------------|-----------------------------·
+|  [90mSolc version: 0.8.24[39m  ·  [90mOptimizer enabled: false[39m  ·  [90mRuns: 200[39m  ·  [90mBlock limit: 30000000 gas[39m  │
+·························|····························|·············|······························
+|  [32m[1mMethods[22m[39m                                                                                        │
+··············|··········|··············|·············|·············|···············|··············
+|  [1mContract[22m   ·  [1mMethod[22m  ·  [32mMin[39m         ·  [32mMax[39m        ·  [32mAvg[39m        ·  [1m# calls[22m      ·  [1meur (avg)[22m  │
+··············|··········|··············|·············|·············|···············|··············
+|  [32m[1mDeployments[22m[39m           ·                                          ·  [1m% of limit[22m   ·             │
+·························|··············|·············|·············|···············|··············
+|  ExampleNFT            ·           -  ·          -  ·    2462521  ·        [90m8.2 %[39m  ·          [32m[90m-[32m[39m  │
+·------------------------|--------------|-------------|-------------|---------------|-------------·
+
+  2 passing (2s)
+
+Done in 4.33s.
+
+
+{
+    slot: 0,
+    data: '0x4578616d706c654e46540000000000-0000000000000000000000000000000014'
+    
+    The "data" field is 64 bytes long but Solidity always tries to optimise data storage. Is the value to save is < 32 bytes, the slot is split into two 32 bytes slot. If the value saved is a string, the second values stored is the length of the string, using 2 bytes per character saved. The example in question relates to the storage of the contract name, i.e., "ExampleNFT", which has 11 characters, therefore is going to need 11 x 2 = 22 bytes of storage. The second element is 0x14 which is 22 in decimal, as expected.
+},
+
+{
+    slot: 1,
+    data: '0x454e46540000000000000000000000-0000000000000000000000000000000008'
+
+    Same as before. In this case this is the symbol, i.e., "ENFT". That's 4 character wide word, i.e., 4 x 2 = 8 bytes. In this case, 0x8 = 8, so all checks out.
+},
